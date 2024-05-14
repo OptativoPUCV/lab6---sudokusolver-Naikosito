@@ -42,3 +42,9 @@ sudoku.c:76:9: error: implicit declaration of function ‘appendList’ [-Werror
 cc1: all warnings being treated as errors
 Compilation failed
 04addbc
+Tue 14 May 2024 12:31:32 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  2|4
+total_score: 15/70
+7078e15

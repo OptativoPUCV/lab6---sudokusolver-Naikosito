@@ -73,7 +73,7 @@ List* get_adj_nodes(Node* n){
         // Asignar el número válido a la casilla vacía
         adj_node->sudo[row][col] = num;
         // Agregar el nodo adyacente a la lista
-        appendList(list, adj_node);
+        pushBack(list, adj_node);
     }
 
     return list;
