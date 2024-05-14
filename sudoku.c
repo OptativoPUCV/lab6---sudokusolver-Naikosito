@@ -44,7 +44,7 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-    int i, j, k;
+    int i, j;
     int row_check[9][10] = {0}; // Matriz para marcar números en filas
     int col_check[9][10] = {0}; // Matriz para marcar números en columnas
     int subgrid_check[9][10] = {0}; // Matriz para marcar números en submatrices 3x3
