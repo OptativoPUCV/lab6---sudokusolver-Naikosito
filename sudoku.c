@@ -44,13 +44,32 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
+    int i, j, k;
+    int row_check[9][10] = {0}; // Matriz para marcar números en filas
+    int col_check[9][10] = {0}; // Matriz para marcar números en columnas
+    int subgrid_check[9][10] = {0}; // Matriz para marcar números en submatrices 3x3
 
-    return 1;
+    for(i = 0; i < 9; i++){
+        for(j = 0; j < 9; j++){
+            int num = n->sudo[i][j];
+            if(num == 0) continue; // Saltar casillas vacías
+            if(row_check[i][num] || col_check[j][num] || subgrid_check[(i / 3) * 3 + (j / 3)][num]){
+                return 0; // Si el número ya está marcado, el estado no es válido
+            }
+            // Marcar número en filas, columnas y submatrices 3x3
+            row_check[i][num] = 1;
+            col_check[j][num] = 1;
+            subgrid_check[(i / 3) * 3 + (j / 3)][num] = 1;
+        }
+    }
+
+    return 1; // Si pasa todas las validaciones, el estado es válido
 }
 
 
 List* get_adj_nodes(Node* n){
     List* list=createList();
+   
     int row = -1, col = -1;
     for(int i = 0; i < 9; i++){
         for(int j = 0; j < 9; j++){
