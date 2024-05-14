@@ -55,7 +55,7 @@ List* get_adj_nodes(Node* n){
    // Obtener las coordenadas de la primera casilla vacía
    for(i = 0; i < 9; i++){
        for(j = 0; j < 9; j++){
-           if(n->sudo[i][j] == 0){
+           if(n->sudo[i][j] == '/0'){
                break;
            }
        }
