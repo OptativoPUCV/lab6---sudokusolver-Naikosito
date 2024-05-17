@@ -120,7 +120,27 @@ int is_final(Node* n){
 
 
 Node* DFS(Node* initial, int* cont) {
+    // Crear una pila y agregar el nodo inicial
+    Stack* stack = createStack(); 
+    push(stack, initial);
 
+    while (!is_empty(stack)) {
+        // Sacar el nodo superior de la pila
+        Node* current = pop(stack);
+        (*cont)++; // Incrementar el contador de nodos visitados
+
+        // Verificar si el nodo actual es un estado final
+        if (is_final(current)) {
+            return current; // Solución encontrada
+        }
+
+        // Obtener nodos adyacentes y agregarlos a la pila
+        List* adj_nodes = get_adj_nodes(current);        
+        Node* adj_node;
+        while ((adj_node = popFront(adj_nodes)) != NULL) {
+            push(stack, adj_node);
+        }
+    }
     return NULL;
 }
 
