@@ -122,7 +122,7 @@ Node* DFS(Node* initial, int* cont) {
     Stack* stack = createStack(1000); // Ajustar la capacidad según sea necesario
     push(stack, initial);
 
-    while (!isStackEmpty(stack)) {
+    while (is_empty(stack)) {
         // Sacar el nodo superior de la pila
         Node* current = pop(stack);
         (*cont)++; // Incrementar el contador de nodos visitados
