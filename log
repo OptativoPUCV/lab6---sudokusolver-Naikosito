@@ -122,3 +122,16 @@ Fri 17 May 2024 09:45:09 PM UTC:
  1 file changed, 3 insertions(+), 2 deletions(-)
  tests:  0|0
 6a392ea
+Fri 17 May 2024 09:45:45 PM UTC: 
+ sudoku.c | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:127:25: error: void value not ignored as it ought to be
+  127 |         Node* current = pop(stack);
+      |                         ^~~
+sudoku.c:138:26: error: void value not ignored as it ought to be
+  138 |         while ((adj_node = popFront(adj_nodes)) != NULL) {
+      |                          ^
+Compilation failed
+1fc25be
