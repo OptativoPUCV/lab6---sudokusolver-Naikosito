@@ -134,9 +134,10 @@ Node* DFS(Node* initial, int* cont) {
         }
 
         // Obtener nodos adyacentes y agregarlos a la pila
-        List* adj_nodes = get_adj_nodes(current);        
-        Node* adj_node;
-        while ((adj_node = popFront(adj_nodes)) != NULL) {
+        List* adj_nodes = get_adj_nodes(current);    
+        Node* adj_node = first(adj_nodes);
+        popFront(adj_nodes);
+        while (adj_node != NULL) {
             push(stack, adj_node);
         }
     }
