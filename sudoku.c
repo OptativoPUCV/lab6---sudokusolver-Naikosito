@@ -117,6 +117,8 @@ int is_final(Node* n){
     return 1; // El nodo es un estado final
 }
 
+
+/*
 Node* DFS(Node* initial, int* cont) {
     // Crear una pila y agregar el nodo inicial
     Stack* stack = createStack(); 
