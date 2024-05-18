@@ -126,7 +126,9 @@ Node* DFS(Node* initial, int* cont) {
 
     while (!is_empty(stack)) {
         // Sacar el nodo superior de la pila
-        Node* current = pop(stack);
+        Node* current = top(stack);
+        pop(stack);
+        
         (*cont)++; // Incrementar el contador de nodos visitados
 
         // Verificar si el nodo actual es un estado final
@@ -136,10 +138,12 @@ Node* DFS(Node* initial, int* cont) {
 
         // Obtener nodos adyacentes y agregarlos a la pila
         List* adj_nodes = get_adj_nodes(current);        
-        Node* adj_node;
-        while ((adj_node = popFront(adj_nodes)) != NULL) {
+        Node* adj_node = first(adj_nodes);
+        while (adj_node != NULL) {
             push(stack, adj_node);
+            adj_node = next(adj_nodes);
         }
+        free(current);
     }
     return NULL;
 }
